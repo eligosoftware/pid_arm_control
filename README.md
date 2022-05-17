@@ -76,9 +76,9 @@ Components:
 
 Built tool's limitations
 
-{{:drone-technolgy:arm_radian_scheme.png|}}
+![Arm scheme](./images/arm_radian_scheme.png)
 
-```python
+```c++
 // importing libraries
 #include "MPU9250.h" // sensor library
 #include "math.h"  // math operations
