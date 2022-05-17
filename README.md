@@ -6,12 +6,11 @@ PID - a proportional-integral-derivative or three-term controller is a mechanism
 
 The main definitions of the PID are the following. First, we have a desired setpoint (SP) - this is the value, that our process should maintain constantly. In drone experiment it was the difference between the centers, and it should be ideally be equal to 0. Second we have a real value of process variable (PV), that we get as an input to our PID algorithm. In drone experiment it was the real box centers' difference. So having two values we calculate the error, the difference we want to eliminate.
 
-<p align="center"><img src="https://latex.codecogs.com/png.image?\dpi{110}\bg{white}SP=r(t)"></p>
+<img src="https://latex.codecogs.com/png.image?\dpi{110}\bg{white}SP=r(t)">
 
-<p align="center"><img src="https://latex.codecogs.com/png.image?\dpi{110}\bg{white}PV=y(t)"></p>
+<img src="https://latex.codecogs.com/png.image?\dpi{110}\bg{white}PV=y(t)">
 
-<p align="center"><img src="https://latex.codecogs.com/png.image?\dpi{110}\bg{white}e(t)=r(t)-y(t)"></p>
-
+<img src="https://latex.codecogs.com/png.image?\dpi{110}\bg{white}e(t)=r(t)-y(t)">
 
 This is where PID algorithm start to work. the formula of it can be written as 
 
