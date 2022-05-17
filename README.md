@@ -78,7 +78,31 @@ Built tool's limitations
 
 {{:drone-technolgy:arm_radian_scheme.png|}}
 
-<file c arduino_code.ino>
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=C++,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+\begin{lstlisting}
 // importing libraries
 #include "MPU9250.h" // sensor library
 #include "math.h"  // math operations
@@ -285,7 +309,7 @@ void sendToPC(float* data)
   Serial.write(byteData, 4);
 }
 
-</file>
+\end{lstlisting}
 
 
 Link to the code in GitHub repository
