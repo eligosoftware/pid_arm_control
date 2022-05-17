@@ -23,7 +23,7 @@ P is a proportional to the error value control. The larger the error, the larger
 
 P=Kp * e 
 
-<img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space;P=K_{p} * e(t)">
+<img src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1">
 
 , where Kp is an adjustable coefficient.
 
