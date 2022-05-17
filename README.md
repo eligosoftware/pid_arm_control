@@ -8,9 +8,9 @@ The main definitions of the PID are the following. First, we have a desired setp
 
 <img src="https://latex.codecogs.com/png.image?\dpi{110}\bg{white}SP=r(t)">
 
-$$ PV= y(t) $$
+<img src="https://latex.codecogs.com/png.image?\dpi{110}\bg{white}PV=y(t)">
 
-$$ e(t)= r(t) - y(t) $$
+<img src="https://latex.codecogs.com/png.image?\dpi{110}\bg{white}e(t)=r(t)-y(t)">
 
 
 This is where PID algorithm start to work. the formula of it can be written as 
