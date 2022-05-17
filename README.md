@@ -56,10 +56,9 @@ This value will be bigger with the lower time of change dt, meaning the faster v
  
 ### The Arm Schematic and components
 
+![Breadboard](./images/sketch_03.05_imu_external_power_marcell_bb.png)
 
-{{:drone-technolgy:sketch_03.05_imu_external_power_marcell_bb.png|}}
-
-{{:drone-technolgy:sketch_03.05_imu_external_power_marcell_schem.png|}}
+![Scheme](./images/sketch_03.05_imu_external_power_marcell_schem.png)
 
 Components:
 
@@ -325,7 +324,7 @@ To change kp, ki and kd in our experiment without changing the code, you can ent
 
 Here the values should be adapted for your device.
 
-{{:drone-technolgy:serialmonitor_input.png|}}
+![Serial monitor](./images/serialmonitor_input.png)
 
 For more examples of PID controller see nice videos on Youtube in Resources section.
 
