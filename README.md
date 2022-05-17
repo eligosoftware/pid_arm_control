@@ -43,10 +43,13 @@ D or derivative control is related to the speed of value change.
 
 D = Kd*de/dt
 
-$$ D=K_{d}*\frac{\mathrm{d}e(t)}{\mathrm{d}t}  $$
+<img src="https://render.githubusercontent.com/render/math?math=D=K_{d}*\frac{\mathrm{d}e(t)}{\mathrm{d}t}">
 
 here 
-$$ \mathrm{d}e =e(t)-e(t-1) $$ dt is time since last change.
+ 
+<img src="https://render.githubusercontent.com/render/math?math=\mathrm{d}e =e(t)-e(t-1)">
+
+<img src="https://render.githubusercontent.com/render/math?math=\mathrm{d}t"> is time since last error measurement.
 
 This value will be bigger with the lower time of change dt, meaning the faster value changes, the higher effect of D control would be felt. It is sometimes called "anticipatory control", as it tries to estimate the future trend of value change based on current rate.
 
@@ -294,7 +297,8 @@ Put together, the final formula of PID controller is:
 
 PID = Kp * e + Ki*sum(e) + Kd*de/dt
 
-$$ PID =K_{p} * e(t)+ K_{i}*\int_0^t \mathrm{e}(\tau)\,\mathrm{d}\tau + K_{d}*\frac{\mathrm{d}e(t)}{\mathrm{d}t} $$
+<img src="https://render.githubusercontent.com/render/math?math=PID =K_{p} * e(t)+ K_{i}*\int_0^t \mathrm{e}(\tau)\,\mathrm{d}\tau + K_{d}*\frac{\mathrm{d}e(t)}{\mathrm{d}t}">
+
 
 
 From this formula you can see, that the only changable parts are K values. This tuning part is most important and most challenging, because generally PID doesn't guarantee optimal solution. There can always be lags in the response to the control, or the proportional relationship between SP and PV, for example, in drone example, between distance and yaw angle, can be incorrect. That is why the K coeffiecients should be manually tuned during experiments. One may find out, that some K values should be set to 0, this means this component is not applied at all. For example, if you set Ki value to 0, it means I 
@@ -308,7 +312,7 @@ First you start changing Kp coefficient, and Ki Kd are set to 0. P value is prop
 
 D = Kd*de/dt
 
-$$ D=K_{d}*\frac{\mathrm{d}e(t)}{\mathrm{d}t} $$
+<img src="https://render.githubusercontent.com/render/math?math=D=K_{d}*\frac{\mathrm{d}e(t)}{\mathrm{d}t}">
 
 Here, the smaller the period between measurements or the bigger the change in error, the bigger will be the final D component.
 
