@@ -23,7 +23,7 @@ P is a proportional to the error value control. The larger the error, the larger
 
 P=Kp * e 
 
-<img src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1">
+<img src="https://render.githubusercontent.com/render/math?math=P=K_{p} * e(t)">
 
 , where Kp is an adjustable coefficient.
 
@@ -33,7 +33,7 @@ I is an integral control. This component integrates or in other words, sums up a
 
 I=Ki*sum(e)
 
-$$ I=K_{i}*\int_0^t \mathrm{e}(\tau)\,\mathrm{d}\tau $$
+<img src="https://render.githubusercontent.com/render/math?math=I=K_{i}*\int_0^t \mathrm{e}(\tau)\,\mathrm{d}\tau">
 
 The main focus of I control is to eliminate residual error of system. When the error is close to 0, 	the integral component will stop growing.
 
