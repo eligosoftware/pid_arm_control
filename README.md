@@ -2,7 +2,7 @@
 
 PID - a proportional-integral-derivative or three-term controller is a mechanism to control process variable value, based on the feedback. Mainly used in systems and applications, which require to continuously control unstable value. As an example from everyday life, I can talk about cruise control systems in cars. The car brain, or main controller, compares the car's real speed with desired for hill ascending and descending. Then the PID algorithms are applied to control the engine power, i.e. increase or decrease it, to save vehicle resources. Also, we have applied PID algorithm in person detection experiment with drone. There we measured the difference between the detected person's bounding box center and image center and changed the yaw angle of the drone accordingly to minimize this error.
 
-#### Main principles
+### Main principles
 
 The main definitions of the PID are the following. First, we have a desired setpoint (SP) - this is the value, that our process should maintain constantly. In drone experiment it was the difference between the centers, and it should be ideally be equal to 0. Second we have a real value of process variable (PV), that we get as an input to our PID algorithm. In drone experiment it was the real box centers' difference. So having two values we calculate the error, the difference we want to eliminate.
 
@@ -17,7 +17,7 @@ This is where PID algorithm start to work. the formula of it can be written as
 
 PID = P + I + D
 
-#### P Component
+### P Component
 
 P is a proportional to the error value control. The larger the error, the larger the P, and vice versa. To adjust it koefficient Kp is used. But the main idea is that this control works only if there is an error.
 
@@ -27,7 +27,7 @@ $$ P=K_{p} * e(t) $$
 
 , where Kp is an adjustable coefficient.
 
-#### I Component
+### I Component
 
 I is an integral control. This component integrates or in other words, sums up all the past errors.
 
@@ -37,7 +37,7 @@ $$ I=K_{i}*\int_0^t \mathrm{e}(\tau)\,\mathrm{d}\tau $$
 
 The main focus of I control is to eliminate residual error of system. When the error is close to 0, 	the integral component will stop growing.
 
-#### D Component
+### D Component
 
 D or derivative control is related to the speed of value change.
 
@@ -51,7 +51,7 @@ $$ \mathrm{d}e =e(t)-e(t-1) $$ dt is time since last change.
 This value will be bigger with the lower time of change dt, meaning the faster value changes, the higher effect of D control would be felt. It is sometimes called "anticipatory control", as it tries to estimate the future trend of value change based on current rate.
 
  
-#### The Arm Schematic and components
+### The Arm Schematic and components
 
 
 {{:drone-technolgy:sketch_03.05_imu_external_power_marcell_bb.png|}}
@@ -69,7 +69,7 @@ Components:
   - Diod
   - Power Station (settings: 3.8 Volts, Max Amper)
 
-#### Arduino code
+### Arduino code
 
 Built tool's limitations
 
@@ -288,7 +288,7 @@ void sendToPC(float* data)
 Link to the code in GitHub repository
 [[https://github.com/eligosoftware/pid_arm_control/blob/main/sketch_apr29a_new_idea.ino]]
 
-####PID Tuning
+### PID Tuning
 
 Put together, the final formula of PID controller is:
 
@@ -327,7 +327,7 @@ Here the values should be adapted for your device.
 For more examples of PID controller see nice videos on Youtube in Resources section.
 
 
-#### Resources
+### Resources
 
   * PID controller on Wikipedia [[https://en.wikipedia.org/wiki/PID_controller]]
   * PID controller code [[https://github.com/eligosoftware/pid_arm_control]]
