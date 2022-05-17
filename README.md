@@ -297,7 +297,7 @@ Put together, the final formula of PID controller is:
 
 PID = Kp * e + Ki * sum(e) + Kd * de/dt
 
-<img src="https://render.githubusercontent.com/render/math?math=PID =K_{p} * e(t) + K_{i} * \int_0^t \mathrm{e}(\tau)\,\mathrm{d}\tau + K_{d} * \frac{\mathrm{d}e(t)}{\mathrm{d}t}">
+<img src="https://render.githubusercontent.com/render/math?math=PID =K_{p} * e(t)+K_{i} * \int_0^t \mathrm{e}(\tau)\,\mathrm{d}\tau + K_{d} * \frac{\mathrm{d}e(t)}{\mathrm{d}t}">
 
 
 From this formula you can see, that the only changable parts are K values. This tuning part is most important and most challenging, because generally PID doesn't guarantee optimal solution. There can always be lags in the response to the control, or the proportional relationship between SP and PV, for example, in drone example, between distance and yaw angle, can be incorrect. That is why the K coeffiecients should be manually tuned during experiments. One may find out, that some K values should be set to 0, this means this component is not applied at all. For example, if you set Ki value to 0, it means I 
