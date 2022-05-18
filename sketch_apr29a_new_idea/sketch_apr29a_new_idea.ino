@@ -15,9 +15,9 @@ float kd=1.8;
 float multiplier=1; // multiplier variable is used to magnitude the P I D values at the same time by the same factor
 float error;
 float ki_error_range=10;
-float desired_yaw=38.0;
+float desired_roll=38.0;
 float pError=0.0;
-float current_yaw=0.0;
+float current_roll=0.0;
 float PID_p, PID_i, PID_d, PID_total;
 // time parameters for setting the frequency of reading sensor values
 int period = 50; // milliseconds    
@@ -46,30 +46,26 @@ void setup() {
   // motor and potentiometer to output and input
   pinMode(MOTOR, OUTPUT);
   pinMode(PIN_POT, INPUT);
-  // set desired yaw to the value, read from potentiometer
-  set_desired_yaw();
+  // set desired roll to the value, read from potentiometer
+  set_desired_roll();
   Serial.println("Setup finished");
   tme=millis(); 
 }
 
 
-void set_desired_yaw(){
+void set_desired_roll(){
+  // -55 lowest, 20 max, 0 center, total 75
   // read potentiometer value, range is [1024-10]
   int rot_1024= analogRead(PIN_POT);
-  // convert to 255 units system
-  int rot_255 = 255*(1024 - rot_1024)/1014;
-  // set desired yaw
-  if (rot_255<=141){
-    desired_yaw=38+rot_255;
-    }
-    else {
-      desired_yaw=-179+(rot_255-141);    
-      }
+  // convert to 75 units system
+  int rot_75 = 75*(1024 - rot_1024)/1014;
+  // set desired roll
+  desired_roll=rot_75-55;
   }
 
 void loop() {
   // set desired yaw in accordance to the last read from potentiometer
-  set_desired_yaw();  
+  set_desired_roll();  
 
   // read input from serial monitor
   // format: <variable>=<float value>
@@ -102,23 +98,12 @@ void loop() {
           
             tme=millis(); // set tme variable to current time in milliseconds
 
-            // read current yaw angle
-             current_yaw=mpu.getYaw();
-             // error calculation
+            // read current roll angle
+             current_roll=mpu.getRoll();
              
-             // if current yaw and desired yaw have the same signs
-             if ( current_yaw*desired_yaw >=0){
-             error=desired_yaw-current_yaw;
-              } else {
-
-                if(current_yaw> 0){
-                  error= 179  -current_yaw + 179 - abs(desired_yaw);
-                } else{
-                    error= -179  -current_yaw -( 179 - abs(desired_yaw));
-                  }
+             // error calculation 
+            error=desired_roll-current_roll;
                     
-                }
-        
             // P calculation    
             PID_p = kp * multiplier* error;
 
@@ -163,11 +148,11 @@ void loop() {
 
 // print variable values to Serial Monitor
 void print_pid() {
-    Serial.print("Current Yaw: ");
-    Serial.println(current_yaw, 2);
-
-    Serial.print("Desired Yaw: ");
-    Serial.println(desired_yaw, 2);
+    Serial.print("Current Roll: ");
+    Serial.println(current_roll, 2);
+    
+    Serial.print("Desired Roll: ");
+    Serial.println(desired_roll, 2);
     Serial.print("Absolute error: ");
     Serial.println(abs(error), 2);
     Serial.print("KP ki ki_error_range kd: ");
