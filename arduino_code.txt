@@ -165,7 +165,7 @@ void loop() {
 void print_pid() {
     Serial.print("Current Yaw: ");
     Serial.println(current_yaw, 2);
-
+    
     Serial.print("Desired Yaw: ");
     Serial.println(desired_yaw, 2);
     Serial.print("Absolute error: ");
